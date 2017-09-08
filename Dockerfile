@@ -84,7 +84,7 @@ RUN rm -rf /etc/php/7.0/apache2/conf.d/20-xdebug.ini
 
 ## config apache
 
-RUN a2enmod rewrite ssl headers
+RUN a2enmod rewrite ssl headers proxy proxy_http proxy_wstunnel
 RUN mkdir /etc/apache2/ssl
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/app.key -out /etc/apache2/ssl/app.crt -subj /C=US/ST=New\ York/L=New\ York\ City/O=SuperDeveloper/OU=Developers/CN=localhost
 
