@@ -7,6 +7,7 @@ RUN apt-get install -y \
 	zip \
 	curl \
 	wget \
+	git \
 	apache2 \
 	php7.0 \
 	php7.0-cli \
