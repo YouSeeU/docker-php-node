@@ -8,6 +8,7 @@ RUN apt-get install -y \
 	curl \
 	wget \
 	git \
+	imagemagick \
 	apache2 \
 	php7.0 \
 	php7.0-cli \
