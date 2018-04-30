@@ -58,7 +58,13 @@ RUN sed -i '$ a\xdebug.var_display_max_depth=4' /etc/php/7.0/mods-available/xdeb
 RUN sed -i '$ a\xdebug.max_nesting_level=500' /etc/php/7.0/mods-available/xdebug.ini
 RUN sed -i '$ a\xdebug.var_display_max_data=-1' /etc/php/7.0/mods-available/xdebug.ini
 RUN sed -i '$ a\xdebug.remote_enable=1' /etc/php/7.0/mods-available/xdebug.ini
-RUN sed -i '$ a\xdebug.remote_connect_back=1' /etc/php/7.0/mods-available/xdebug.ini
+RUN sed -i '$ a\xdebug.remote_autostart=1' /etc/php/7.0/mods-available/xdebug.ini
+RUN sed -i '$ a\xdebug.remote_connect_back=0' /etc/php/7.0/mods-available/xdebug.ini
+RUN sed -i '$ a\xdebug.remote_handler=dbgp' /etc/php/7.0/mods-available/xdebug.ini
+RUN sed -i '$ a\xdebug.profiler_enable=0' /etc/php/7.0/mods-available/xdebug.ini
+RUN sed -i '$ a\xdebug.profiler_output_dir="/var/www/html"' /etc/php/7.0/mods-available/xdebug.ini
+RUN sed -i '$ a\xdebug.remote_port=9000' /etc/php/7.0/mods-available/xdebug.ini
+RUN sed -i '$ a\xdebug.remote_host="127.0.0.1"' /etc/php/7.0/mods-available/xdebug.ini
 
 RUN sed -i '$ a\opcache.max_accelerated_files=20000' /etc/php/7.0/mods-available/opcache.ini
 RUN sed -i '$ a\opcache.interned_strings_buffer=8' /etc/php/7.0/mods-available/opcache.ini
