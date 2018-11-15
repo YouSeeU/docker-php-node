@@ -42,7 +42,7 @@ RUN mv composer.phar /usr/local/bin/composer
 
 ## install timezonedb
 
-RUN pecl install timezonedb
+RUN pecl install timezonedb-2018.6
 RUN sed -i '$ a\extension=timezonedb.so' /etc/php/7.0/apache2/php.ini
 RUN sed -i '$ a\extension=timezonedb.so' /etc/php/7.0/cli/php.ini
 
@@ -107,7 +107,7 @@ RUN mkdir -p /usr/local/openssl/include/openssl/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.a /usr/local/openssl/lib/libssl.a && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
 
-RUN 	pecl install mongodb
+RUN pecl install mongodb-1.5.2
 
 RUN echo "extension=mongodb.so" > /etc/php/7.0/mods-available/mongodb.ini
 RUN ln -s /etc/php/7.0/mods-available/mongodb.ini /etc/php/7.0/cli/conf.d/20-mongodb.ini
